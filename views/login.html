@@ -1,0 +1,35 @@
+<html>
+
+  <head>
+    <title>My Game List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/css_project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <h1>My Game List</h1>
+      <div id="sign_in_form">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign_in" aria-expanded="true" aria-controls="sign_in">Sign in</button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign_up" aria-expanded="false" aria-controls="sign_up">Sign up</button>
+      </div>
+      <div class="collapse" id="sign_in">
+        <input class="username" placeholder="Enter username"></input>
+        <input class="password" placeholder="Enter password"></input>
+        <button id="bsign_in" v-on:click="connection()">Sign in</button>
+      </div>
+      <div class="collapse" id="sign_up">
+        <input class="username" placeholder="Enter username"></input>
+        <input class="password" placeholder="Enter password"></input>
+        <input class="re_password" placeholder="Confirm password"></input>
+        <button id="bsign_up" v-on:click="register()">Sign up</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script type="text/javascript" src="../public/js/script_project.js"></script>
+
+</html>

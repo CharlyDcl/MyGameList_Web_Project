@@ -1,0 +1,36 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>My Game List</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../public/css/css_project.css">
+	</head>
+
+	<body>
+		<div class="app">
+			<p>WEB PROJECT</p>
+			<div id="app-6">
+	  			<p>{{ message }}</p>
+	  			<input v-model="message">
+			</div>
+			<div id="gamesList">
+				<div class="game" v-for="(game, index) in games">
+					<div class="data">{{game.name + ' ' + game.editor + ' ' + game.date }}
+						<img v-bind:src=game.picture alt="no image">
+						<select v-model="selected[game.id]">
+ 							<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+						</select>
+						<button v-on:click="countMinus(game.id)" class="btn">-</button>
+
+		  			<p class="counter">{{rates[game.id]}}</p>
+		  			<button v-on:click="countAdd(game.id)" class="btn">+</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script type="text/javascript" src="../public/js/script_project.js"></script>
+</html>
