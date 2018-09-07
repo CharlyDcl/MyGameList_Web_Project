@@ -17,11 +17,6 @@ function Game(id, name, editor, date, picture) {
 	this.editor = editor;
 	this.date = date;
 	this.picture = picture;
-
-	toString = function (index) {
-		var game = games[index];
-		return "<ul><li>game.name</li><li>game.editor</li><li>game.date</li></ul>";
-	}
 }
 
 function Rate(id, rate) {
@@ -55,20 +50,24 @@ var app = new Vue({
 			}
 		},
 		newAccount: function () {
-			/*document.getElementById('sign_in').style.display = "none";
-			document.getElementById('sign_up').style.display = "block";
-			document.getElementById('element').style.display = "inline-block";*/
 		},
 		sign_in_form: function () {
-			/*document.getElementById('sign_in').style.display = "block";
-			document.getElementById('sign_up').style.display = "none";
-			document.getElementById('element').style.display = "none";*/
 		},
 		connection: function () {
+			//check account / password
+			//false : error
+			//true : initialize rate and selection with user one
+			//open game html page
 
+			//var url = window.location.href;
+			//url[url.length - 1];
+			//to get last url parameter (ex : username after login and on load to the game page)
 		},
 		register: function () {
-
+			//check account
+			//create account
+			//initialize rate and selection to 0
+			//open game html page
 		}
 	},
 	created: function() {
@@ -87,15 +86,8 @@ var app = new Vue({
 			this.selected[i] = 0;
 			Vue.set(this.rates,i,new Rate(userrate[i].id, userrate[i].rate));
 		}
-		/*
-		this.selected[0] = 1;
-		var temp = this.games[0];
-		Vue.set(this.games,0, this.games[1]);
-		Vue.set(this.games,1, temp);
-		//use to check if games order is changed
-		*/
 	}
-})
+});
 
 var users = {
 	"users": [
@@ -112,6 +104,7 @@ var users = {
 userrate.sort(function(a, b) {
 	return b.rate - a.rate;
 });
+
 for(var i=0;i<userrate.length;i++){
 console.log(userrate[i].id);}
 
@@ -119,6 +112,7 @@ var rateorder = [];
 for(i=0;i<userrate.length;i++) {
 	rateorder[i] = userrate[i].id;
 }
+
 function Order(array, order, key) {
 
 	array.sort(function(a, b) {
@@ -132,25 +126,6 @@ function Order(array, order, key) {
 	});
 	return array;
 };
+
 ordered = Order(app.games, rateorder, 'id');
 console.log(app.rates);
-
-/*var gameOrder = function() {
-	var gameCopie = [];
-	var index;
-	for(var i=0;i<app.games.length;i++) {
-		gameCopie[i] = app.games[i];
-	}
-	for(var i=0;i<(app.games.length/2);i++) {
-		for(var j=0;j<app.games.length;j++) {
-			if(userrate[i].id === app.games[j].id){
-				index = j;
-			}
-		}
-		Vue.set(app.games,i,app.games[index]);
-		Vue.set(app.games,index,gameCopie[index]);
-	}
-};*/
-//gameOrder();
-//faire une copie de games pour eviter la perte d'informations
-//console.log(app.games);

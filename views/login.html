@@ -8,9 +8,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
+
   <body>
     <div class="app">
-      <h1>My Game List</h1>
+      <h1 class="title">My Game List</h1>
+
+<div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="sign">
+    <form role="form">
+      <fieldset>
+
+        <h2>Please Sign In</h2>
+
       <div id="sign_in_form">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign_in" aria-expanded="true" aria-controls="sign_in">Sign in</button>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sign_up" aria-expanded="false" aria-controls="sign_up">Sign up</button>
@@ -27,6 +38,7 @@
         <button id="bsign_up" v-on:click="register()">Sign up</button>
       </div>
     </div>
+  </div>
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>

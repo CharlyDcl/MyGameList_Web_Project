@@ -10,26 +10,43 @@
 
 	<body>
 		<div class="app">
-			<p>WEB PROJECT</p>
-			<div id="app-6">
-	  			<p>{{ message }}</p>
-	  			<input v-model="message">
-			</div>
-			<div id="gamesList">
-				<div class="game" v-for="(game, index) in games">
-					<div class="data">{{game.name + ' ' + game.editor + ' ' + game.date }}
-						<img v-bind:src=game.picture alt="no image">
+		
+			
+  <div class="title">My Game List</div>
+  <div>Welcome User</div>
+ 
+			<div id="gamesList" >
+				<section >
+ 			 <div class="container ">
+				<div class="card pb-4 "  class="game" v-for="(game, index) in games">
+						 <div class="row ">
+        				<div class="col-md-4">
+        					<img v-bind:src=game.picture alt="no image" >
+          </div>
+          <div class="col-md-8 px-3">
+            <div class="card-block px-3">
+              <h4 class="card-title" >{{game.name  }}</h4>
+					<p class="card-text" >{{game.editor}} </p>
+              <p class="card-text">{{game.date}}</p>
+<div class="inline">
 						<select v-model="selected[game.id]">
- 							<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+ 							<option  v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
 						</select>
-						<button v-on:click="countMinus(game.id)" class="btn">-</button>
+					<div class=" text-right pb-9">	<button v-on:click="countMinus(game.id)" class="btn">-</button>
 
 		  			<p class="counter">{{rates[game.id]}}</p>
 		  			<button v-on:click="countAdd(game.id)" class="btn">+</button>
+		  		</div>
+		  		</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		</div>	
+	</div>
+</div>
+	</div>
+	</section>
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script type="text/javascript" src="../public/js/script_project.js"></script>
