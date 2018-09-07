@@ -1,15 +1,3 @@
-var userrate = [
-	{id:0, rate:4},
-	{id:1, rate:3},
-	{id:2, rate:7},
-	{id:3, rate:10},
-	{id:4, rate:1},
-	{id:5, rate:4},
-	{id:6, rate:2},
-	{id:7, rate:8},
-	{id:8, rate:9},
-	{id:9, rate:0}
-];
 
 function Game(id, name, editor, date, picture) {
 	this.id = id;
@@ -27,7 +15,6 @@ function Rate(id, rate) {
 var app = new Vue({
 	el: '.app',
 	data: {
-		message: "test",
 		games: [],
 		selected: [],
 		rates: [],
@@ -84,29 +71,18 @@ var app = new Vue({
 
 		for(var i = 0 ; i < this.games.length ; i++) {
 			this.selected[i] = 0;
-			Vue.set(this.rates,i,new Rate(userrate[i].id, userrate[i].rate));
+			Vue.set(this.rates,i,0);
 		}
 	}
 });
-
-var users = {
-	"users": [
-		{
-			"user": "username",
-			"password": "password"
-		},
-		{
-			"user": "username1",
-			"password": "password1"
-		}
-	]};
-
+var userrate = [];
 userrate.sort(function(a, b) {
 	return b.rate - a.rate;
 });
 
 for(var i=0;i<userrate.length;i++){
-console.log(userrate[i].id);}
+//console.log(userrate[i].id);
+}
 
 var rateorder = [];
 for(i=0;i<userrate.length;i++) {
